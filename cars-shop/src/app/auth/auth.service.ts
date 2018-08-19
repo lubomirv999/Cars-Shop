@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
 import * as firebase from 'firebase';
+import { UsersService } from '../users/users.service';
+
+const baseUrl = 'https://carsshop-8551d.firebaseio.com/users/'
 
 @Injectable({
     providedIn: 'root'
@@ -38,7 +41,7 @@ export class AuthService {
                         this.token = token;
                     })
 
-                this.router.navigate(['/cars-shop/start']);
+                this.router.navigate(['/']);
                 this.toastr.success('Successfully Signed In', 'Success');
             })
             .catch((err) => {
@@ -55,23 +58,34 @@ export class AuthService {
     }
 
     getToken() {
-        firebase.auth()
-            .currentUser
-            .getIdToken()
-            .then((token: string) => {
-                this.token = token;
-            })
+        if (firebase.auth().currentUser) {
+            firebase.auth()
+                .currentUser
+                .getIdToken()
+                .then((token: string) => {
+                    this.token = token;
+                })
+
+        } else {
+            this.token = '';
+        }
 
         return this.token;
     }
 
     isAuthenticated(): boolean {
-        return this.token != null;
+        return this.token != null && this.token != '';
     }
 
-    /* 
-    isAdmin(): boolean{
-        return this.token == "adminId";
+    isAdmin(): boolean {
+        if (firebase.auth().currentUser) {
+            return (firebase.auth().currentUser.email == 'admin@admin.com') && this.token != null;
+        } else {
+            return false;
+        }
     }
-    */
+
+    getOwnerId() {
+        return firebase.auth().currentUser.uid;
+    }
 }

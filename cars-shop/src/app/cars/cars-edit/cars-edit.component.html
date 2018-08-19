@@ -1,0 +1,144 @@
+<div *ngIf="bindingModel">
+  <div class="row">
+    <div class="col-xs-12">
+      <form #f="ngForm" (ngSubmit)="edit()">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="name">Maker</label>
+              <input
+                required
+                type="text"
+                id="maker"
+                name="maker"
+                [(ngModel)]="bindingModel.maker"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="model">Model</label>
+              <input
+                required
+                type="text"
+                id="model"
+                name="model"
+                [(ngModel)]="bindingModel.model"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="model">Condition</label>
+              <input
+                required
+                type="text"
+                id="condition"
+                name="condition"
+                [(ngModel)]="bindingModel.condition"
+                class="form-control">
+            </div>
+          </div>
+        </div> 
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="model">Color</label>
+              <input
+                required
+                type="text"
+                id="color"
+                name="color"
+                [(ngModel)]="bindingModel.color"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="model">Transmission</label>
+              <input
+                required
+                type="text"
+                id="transmission"
+                name="transmission"
+                [(ngModel)]="bindingModel.transmission"
+                class="form-control">
+            </div>
+          </div>
+        </div> 
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="model">Year Of Production</label>
+              <input
+                required
+                type="text"
+                id="yearOfProduction"
+                name="yearOfProduction"
+                [(ngModel)]="bindingModel.yearOfProduction"
+                class="form-control">
+            </div>
+          </div>
+        </div> 
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="model">Kilometers</label>
+              <input
+                required
+                type="text"
+                id="kilometers"
+                name="kilometers"
+                [(ngModel)]="bindingModel.kilometers"
+                class="form-control">
+            </div>
+          </div>
+        </div> 
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="model">Price</label>
+              <input
+                required
+                type="text"
+                id="price"
+                name="price"
+                [(ngModel)]="bindingModel.price"
+                class="form-control">
+            </div>
+          </div>
+        </div> 
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="model">Image Url</label>
+              <input
+                required
+                type="text"
+                id="imageUrl"
+                name="imageUrl"
+                [(ngModel)]="bindingModel.imageUrl"
+                class="form-control">
+            </div>
+          </div>
+        </div> 
+
+      <button class="btn btn-warning" [disabled]="f.invalid" type="submit">Edit</button>
+      </form>
+    </div>
+  </div>
+</div>

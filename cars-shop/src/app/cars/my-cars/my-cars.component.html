@@ -1,0 +1,31 @@
+<div class="col-md-12 text-center">
+    <h1>{{userEmail}} Cars</h1>
+  </div>
+  <div class="row text-center content">
+    <div *ngFor="let car of cars | async" class="col-xs-12">
+      <div *ngIf="car.ownerId == ownerId">
+          <div class="list-group-item clearfix">
+              <div class="pull-left">
+                <h4 class="list-group-item-heading"><span class="car-info">Maker</span> - <span class="text-primary">{{car.maker}}</span></h4>
+                <p class="list-group-item-text"><span class="car-info">Model</span> - <span class="text-primary">{{car.model}}</span></p>
+                <p class="list-group-item-text"><span class="car-info">Condition</span> - <span class="text-primary">{{car.condition}}</span></p>
+                <p class="list-group-item-text"><span class="car-info">Color</span> - <span class="text-primary">{{car.color}}</span></p>
+                <p class="list-group-item-text"><span class="car-info">Transmission</span> - <span class="text-primary">{{car.transmission}}</span></p>
+                <p class="list-group-item-text"><span class="car-info">Year of production</span> - <span class="text-primary">{{car.yearOfProduction}}</span></p>
+                <p class="list-group-item-text"><span class="car-info">Kilometers</span> - <span class="text-primary">{{car.kilometers}}</span></p>
+                <p class="list-group-item-text"><span class="car-info">Price</span> - <span class="text-primary">{{car.price}}</span></p>
+              </div>
+              <span class="pull-right">
+                    <img
+                      src="{{car.imageUrl}}"
+                      alt="{{car.model}}"
+                      class="img-responsive car-img">
+               </span>
+               <div class="car-actions text-white">
+                <a *ngIf="authService.isAdmin() || car.ownerId == ownerId" class="btn btn-warning text-white" routerLink="/edit/{{car.id}}">Edit</a>
+                <a *ngIf="authService.isAdmin() || car.ownerId == ownerId" class="btn btn-danger" (click)="delete(car.id)">Delete</a>
+               </div>
+              </div>    
+      </div>          
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+<div *ngIf="car">
+  <div  class="row">
+    <div class="col-xs-12">
+      <img
+        src="{{car.imageUrl}}"
+        alt="{{car.Maker}}"
+        class="img-responsive"
+        style="max-height: 300px;">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>{{car.maker}} {{car.model}}</h1 >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+        <ul>
+            <li><button class="btn btn-primary" style="cursor: pointer;" routerLink="/cars/buy/{{id}}">Buy</button></li>
+        </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>Condition - <span>{{car.condition}}</span></p>
+      <p>Color - <span></span>{{car.color}}</p>
+      <p>Transmission - <span>{{car.transmission}}</span></p>
+      <p>Year Of Production - <span>{{car.yearOfProduction}}</span></p>
+      <p>Kilometers - <span>{{car.kilometers}}</span></p>
+      <p>Price - <span>{{car.price}}</span></p>
+    </div>
+  </div>  
+</div>

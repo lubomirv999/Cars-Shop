@@ -1,0 +1,17 @@
+<div class="col-md-12 text-center">
+  <h1>All Users</h1>
+</div>
+<div class="row text-center">
+  <div *ngFor="let user of users | async" class="col-xs-12">
+      <div class="list-group-item clearfix">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading"><span class="car-info">Id</span> - <span class="text-primary">{{user.uid}}</span></h4>        
+        <h4 class="list-group-item-heading"><span class="car-info">Email</span> - <span class="text-primary">{{user.email}}</span></h4>        
+      </div>      
+       <div class="car-actions text-white">
+        <a class="btn btn-success" routerLink="/details/{{car.id}}">Details</a>        
+        <a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="delete(user.uid)">Delete</a>
+       </div>
+      </div>      
+  </div>
+</div>
