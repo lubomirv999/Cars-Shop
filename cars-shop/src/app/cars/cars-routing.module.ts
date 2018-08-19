@@ -17,7 +17,7 @@ const routes: Route[] = [
   { path: 'buy/:id', component: CarsBuyComponent, canActivate: [AuthGuard] },
   { path: 'buy-car-success', component: BuySuccessComponent, canActivate: [AuthGuard] },
   { path: 'buy-car-failed', component: BuyFailedComponent, canActivate: [AuthGuard] },
-  { path: 'details/:id', component: CarsDetailsComponent }
+  { path: 'details/:id', component: CarsDetailsComponent },
   { path: 'my-cars', component: MyCarsComponent }
 ]
 

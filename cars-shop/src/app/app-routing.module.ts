@@ -11,6 +11,7 @@ import { CarsStartComponent } from './cars/cars-start/cars-start.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminGuard } from './auth/admin.guard';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { PartsModule } from './parts/parts.module';
 
 const routes: Route[] = [
     {
@@ -25,6 +26,11 @@ const routes: Route[] = [
     {
         path: 'cars',
         loadChildren: () => CarsModule,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'parts',
+        loadChildren: () => PartsModule,
         canActivate: [AuthGuard]
     },
     {
