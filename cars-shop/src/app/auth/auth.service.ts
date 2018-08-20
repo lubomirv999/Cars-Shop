@@ -3,7 +3,10 @@ import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
 import * as firebase from 'firebase';
+
 import { UsersService } from '../users/users.service';
+import { UserCreate } from '../users/models/user-create.model';
+import { UsersList } from '../users/models/user-list.model';
 
 const baseUrl = 'https://carsshop-8551d.firebaseio.com/users/'
 
@@ -12,10 +15,13 @@ const baseUrl = 'https://carsshop-8551d.firebaseio.com/users/'
 })
 export class AuthService {
     token: string;
+    userModel: UserCreate;
+    users: UsersList[] = [];
 
     constructor(
         private toastr: ToastrService,
-        private router: Router
+        private router: Router,
+        private usersService: UsersService
     ) { }
 
     signUp(email: string, password: string) {
@@ -39,6 +45,20 @@ export class AuthService {
                     .getIdToken()
                     .then((token: string) => {
                         this.token = token;
+
+                        this.usersService.getAllUsers().subscribe(res => {
+                            this.users = res;
+
+                            this.checkUsers(userExists => {
+                                console.log(userExists);
+                                if (userExists === false) {
+                                    this.userModel = new UserCreate(
+                                        firebase.auth().currentUser.uid,
+                                        firebase.auth().currentUser.email);
+                                    this.usersService.createUser(this.userModel).subscribe();
+                                }
+                            })
+                        });
                     })
 
                 this.router.navigate(['/']);
@@ -87,5 +107,19 @@ export class AuthService {
 
     getOwnerId() {
         return firebase.auth().currentUser.uid;
+    }
+
+    checkUsers(callback) {
+        let userExists = false;
+
+        this.users.forEach(user => {
+            userExists = user.email == firebase.auth().currentUser.email;
+
+            if (userExists) {
+                callback(userExists);
+            }
+        });
+
+        callback(userExists);
     }
 }

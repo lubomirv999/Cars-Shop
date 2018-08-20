@@ -1,27 +1,23 @@
-<div *ngIf="car" class="col-md-12">
+<div *ngIf="car" class="col-md-12 text-center car">
   <h1>Buy your dream car:</h1>
   <p>{{car.maker}} {{car.model}}</p>
 
   <h2>For:</h2>
   <p>{{car.price}}</p>
 
-  <p>Deposit money:</p>
-
   <form #f="ngForm" (ngSubmit)="buy(car.price)">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="form-group">
-          <label for="deposit">Deposit Money</label>
-          <input
-            required
-            type="text"
-            id="deposit"
-            name="deposit"
-            [(ngModel)]="deposit"
-            class="form-control">
-        </div>
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label for="deposit">Deposit Money</label>
+        <input
+          required
+          type="text"
+          id="deposit"
+          name="deposit"
+          [(ngModel)]="deposit"
+          class="form-control">
       </div>
-    </div> 
+    </div>
 
     <button class="btn btn-primary" [disabled]="f.invalid" type="submit">Buy</button>
   </form>

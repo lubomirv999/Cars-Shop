@@ -1,29 +1,22 @@
-<div *ngIf="part">
-    <div  class="row">
-      <div class="col-xs-12">
-        <img
-          src="{{part.imageUrl}}"
-          alt="{{part.Maker}}"
-          class="img-responsive"
-          style="max-height: 300px;">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>{{part.maker}} {{part.model}}</h1 >
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-          <ul>
-              <li><button class="btn btn-primary" style="cursor: pointer;" routerLink="/parts/buy/{{id}}">Buy</button></li>
-          </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <p>Condition - <span>{{part.condition}}</span></p>
-        <p>Price - <span>{{part.price}}</span></p>
-      </div>
-    </div>  
+<div *ngIf="part" class="col-md-12 text-center">
+  <div class="col-xs-12">
+    <img
+      src="{{part.imageUrl}}"
+      alt="{{part.Maker}}"
+      class="img-responsive"
+      style="max-height: 300px;">
   </div>
+  
+  <div class="col-xs-12">
+    <h1>{{part.maker}} {{part.model}}</h1 >
+  </div>
+  
+  <div class="col-xs-12">
+    <p>Condition - <span>{{part.condition}}</span></p>
+    <p>Price - <span>{{part.price}}</span></p>
+  </div>  
+
+  <div class="col-xs-12">
+    <button class="btn btn-primary" style="cursor: pointer;" routerLink="/parts/buy/{{id}}">Buy</button>
+  </div>
+</div>

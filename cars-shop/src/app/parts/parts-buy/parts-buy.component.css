@@ -1,0 +1,7 @@
+.part{
+    padding: 25px 0;
+}
+
+h1, h2, label, input{
+    padding: 15px;
+}

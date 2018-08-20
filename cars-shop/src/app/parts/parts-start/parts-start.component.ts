@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 
+import * as firebase from 'firebase';
+
 import { PartsService } from '../parts.service';
 import { AuthService } from '../../auth/auth.service';
 
@@ -36,5 +38,13 @@ export class PartsStartComponent implements OnInit {
         this.router.navigate(['/parts']);
         this.parts = this.partsService.getAllCars();
       })
+  }
+
+  isAdmin() {
+    if (firebase.auth().currentUser) {
+      return (firebase.auth().currentUser.email == 'admin@admin.com');
+    } else {
+      return false;
+    }
   }
 }

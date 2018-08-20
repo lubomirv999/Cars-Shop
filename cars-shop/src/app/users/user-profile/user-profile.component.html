@@ -1,19 +1,6 @@
-<div>
-  <div class="row">
-    <div class="col-xs-12">
-      <h1>Email: {{userEmail}}</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <ul>
-        <li>
-          <button class="btn btn-warning" style="cursor: pointer;" routerLink="/users/edit/{{userId}}">Edit</button>
-        </li>
-        <li>
-          <button class="btn btn-danger" style="cursor: pointer;" routerLink="/users/delete/{{userId}}">Delete</button>
-        </li>
-      </ul>
-    </div>
-  </div>
+<div class="col-md-12 col-xs-12 text-center">
+  <h1>Welcome to your profile!</h1>
+  <h3>Your Email: </h3>
+  <h2 class="text-primary">{{userEmail}}</h2>
+  <h4>If you want to delete your account contact our admin!</h4>
 </div>

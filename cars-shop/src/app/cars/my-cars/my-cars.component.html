@@ -2,7 +2,7 @@
     <h1>{{userEmail}} Cars</h1>
   </div>
   <div class="row text-center content">
-    <div *ngFor="let car of cars | async" class="col-xs-12">
+    <div *ngFor="let car of cars | async" class="col-xs-12 col-md-4 car">
       <div *ngIf="car.ownerId == ownerId">
           <div class="list-group-item clearfix">
               <div class="pull-left">

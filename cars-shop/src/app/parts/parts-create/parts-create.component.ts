@@ -28,7 +28,7 @@ export class PartsCreateComponent implements OnInit {
       this.bindingModel)
       .subscribe(() => {
         this.toastr.success('Part created!', 'Success');
-        this.router.navigate(['/parts']);
+        this.router.navigate(['/parts/start']);
       })
   }
 }

@@ -2,7 +2,7 @@
   <h1>Our set of Parts for sale!</h1>
 </div>
 <div class="row text-center">
-  <div *ngFor="let part of parts | async" class="col-xs-12">
+  <div *ngFor="let part of parts | async" class="col-xs-12 col-md-4 part">
       <div class="list-group-item clearfix">
       <div class="pull-left">
         <h4 class="list-group-item-heading"><span class="part-info">Maker</span> - <span class="text-primary">{{part.maker}}</span></h4>
@@ -18,8 +18,8 @@
        </span>
        <div class="part-actions text-white">
         <a class="btn btn-success" routerLink="/parts/details/{{part.id}}">Details</a>
-        <a *ngIf="authService.isAdmin()" class="btn btn-warning text-white" routerLink="/parts/edit/{{part.id}}">Edit</a>
-        <a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="delete(part.id)">Delete</a>
+        <a *ngIf="isAdmin()" class="btn btn-warning text-white" routerLink="/parts/edit/{{part.id}}">Edit</a>
+        <a *ngIf="isAdmin()" class="btn btn-danger" (click)="delete(part.id)">Delete</a>
        </div>
       </div>      
   </div>

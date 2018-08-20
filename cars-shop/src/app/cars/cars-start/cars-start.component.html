@@ -1,8 +1,8 @@
 <div class="col-md-12 text-center">
-  <h1>Welcome to Cars Shop!</h1>
+    <h1>Welcome to Cars Shop!</h1>
 </div>
 <div class="row text-center">
-  <div *ngFor="let car of cars | async" class="col-xs-12">
+  <div *ngFor="let car of cars | async" class="col-xs-12 col-md-4 car">
       <div class="list-group-item clearfix">
       <div class="pull-left">
         <h4 class="list-group-item-heading"><span class="car-info">Maker</span> - <span class="text-primary">{{car.maker}}</span></h4>
@@ -19,12 +19,12 @@
               src="{{car.imageUrl}}"
               alt="{{car.model}}"
               class="img-responsive car-img">
-       </span>
-       <div class="car-actions text-white">
+        </span>
+        <div class="car-actions text-white">
         <a class="btn btn-success" routerLink="/details/{{car.id}}">Details</a>
         <a *ngIf="authService.isAdmin()" class="btn btn-warning text-white" routerLink="/edit/{{car.id}}">Edit</a>
         <a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="delete(car.id)">Delete</a>
-       </div>
+        </div>
       </div>      
   </div>
 </div>

@@ -1,8 +1,7 @@
-<div class="row">
-  <div class="col-xs-12">
+<div class="row text-center">
+  <div class="col-xs-12 col-sm-10 col-md-12 col-sm-offset-1 col-md-offset-2">
+    <h1>Sell your part!</h1>
     <form #f="ngForm" (ngSubmit)="create()">
-      <div class="row">
-        <div class="col-xs-12">
           <div class="form-group">
             <label for="name">Maker</label>
             <input
@@ -12,12 +11,7 @@
               name="maker"
               [(ngModel)]="bindingModel.maker"
               class="form-control">
-          </div>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12">
           <div class="form-group">
             <label for="model">Model</label>
             <input
@@ -28,11 +22,7 @@
               [(ngModel)]="bindingModel.model"
               class="form-control">
           </div>
-        </div>
-      </div>
       
-      <div class="row">
-        <div class="col-xs-12">
           <div class="form-group">
             <label for="model">Condition</label>
             <input
@@ -42,12 +32,8 @@
               name="condition"
               [(ngModel)]="bindingModel.condition"
               class="form-control">
-          </div>
-        </div>
-      </div>         
+          </div>      
 
-      <div class="row">
-        <div class="col-xs-12">
           <div class="form-group">
             <label for="model">Price</label>
             <input
@@ -58,11 +44,7 @@
               [(ngModel)]="bindingModel.price"
               class="form-control">
           </div>
-        </div>
-      </div> 
 
-      <div class="row">
-        <div class="col-xs-12">
           <div class="form-group">
             <label for="model">Image Url</label>
             <input
@@ -73,10 +55,8 @@
               [(ngModel)]="bindingModel.imageUrl"
               class="form-control">
           </div>
-        </div>
-      </div> 
 
-     <button class="btn btn-primary" [disabled]="f.invalid" type="submit">Create Part</button>
+     <button class="btn btn-primary" [disabled]="f.invalid" type="submit">Sell Part</button>
     </form>
   </div>
 </div>

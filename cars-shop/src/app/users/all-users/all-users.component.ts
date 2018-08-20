@@ -28,8 +28,9 @@ export class AllUsersComponent implements OnInit {
   delete(id: string) {
     this.usersService.deleteUser(id)
       .subscribe((data) => {
-        this.toastr.success('User deleted!', 'Success!');
-        this.router.navigate(['/users']);
+        this.toastr.error('Delete user from Firebase!', 'Success!');
+        this.toastr.success('User deleted!', 'Success!');      
+        this.router.navigate(['/users/all']);
         this.users = this.usersService.getAllUsers();
       })
   }

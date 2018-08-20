@@ -12,7 +12,7 @@ import { PartsBuyFailedComponent } from './parts-buy-failed/parts-buy-failed.com
 import { PartsBuySuccessComponent } from './parts-buy-success/parts-buy-success.component';
 
 const routes: Route[] = [
-    { path: '', component: PartsStartComponent, canActivate: [AuthGuard] },
+    { path: 'start', component: PartsStartComponent, canActivate: [AuthGuard] },
     { path: 'create', component: PartsCreateComponent, canActivate: [AuthGuard] },
     { path: 'my-parts', component: MyPartsComponent, canActivate: [AuthGuard] },
     { path: 'edit/:id', component: PartsEditComponent, canActivate: [AuthGuard] },

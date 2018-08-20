@@ -1,8 +1,8 @@
 <div class="col-md-12 text-center">
     <h1>{{userEmail}} Parts</h1>
   </div>
-  <div class="row text-center content">
-    <div *ngFor="let part of parts | async" class="col-xs-12">
+  <div class="row text-center">
+    <div *ngFor="let part of parts | async" class="col-xs-12 col-md-4 part">
       <div *ngIf="part.ownerId == ownerId">
           <div class="list-group-item clearfix">
               <div class="pull-left">

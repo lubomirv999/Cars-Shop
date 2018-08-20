@@ -1,28 +1,26 @@
-<div *ngIf="part" class="col-md-12">
-    <h1>Buy your dream Part:</h1>
-    <p>{{part.maker}} {{part.model}}</p>
-  
-    <h2>For:</h2>
-    <p>{{part.price}}</p>
-  
-    <p>Deposit money:</p>
-  
-    <form #f="ngForm" (ngSubmit)="buy(part.price)">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="form-group">
-            <label for="deposit">Deposit Money</label>
-            <input
-              required
-              type="text"
-              id="deposit"
-              name="deposit"
-              [(ngModel)]="deposit"
-              class="form-control">
-          </div>
+<div *ngIf="part" class="col-md-12 text-center part">
+  <h1>Buy your dream Part:</h1>
+  <p>{{part.maker}} {{part.model}}</p>
+
+  <h2>For:</h2>
+  <p>{{part.price}}</p>
+
+  <p>Deposit money:</p>
+
+  <form #f="ngForm" (ngSubmit)="buy(part.price)">
+      <div class="col-xs-12">
+        <div class="form-group">
+          <label for="deposit">Deposit Money</label>
+          <input
+            required
+            type="text"
+            id="deposit"
+            name="deposit"
+            [(ngModel)]="deposit"
+            class="form-control">
         </div>
-      </div> 
-  
-      <button class="btn btn-primary" [disabled]="f.invalid" type="submit">Buy</button>
-    </form>
-  </div>
+      </div>
+
+    <button class="btn btn-primary" [disabled]="f.invalid" type="submit">Buy</button>
+  </form>
+</div>

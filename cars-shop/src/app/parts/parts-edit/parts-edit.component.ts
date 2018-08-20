@@ -37,7 +37,7 @@ export class PartsEditComponent implements OnInit {
     this.partsService.editPart(body)
       .subscribe((data) => {
         this.toastr.success('Part edited!', 'Success!');
-        this.router.navigate(['/parts']);
+        this.router.navigate(['/parts/start']);
       })
   }
 }
