@@ -7,6 +7,8 @@
             <input
               required
               type="text"
+              minlength="2"
+              maxlength="150"
               id="maker"
               name="maker"
               [(ngModel)]="bindingModel.maker"
@@ -18,6 +20,8 @@
             <input
               required
               type="text"
+              minlength="2"
+              maxlength="150"
               id="model"
               name="model"
               [(ngModel)]="bindingModel.model"
@@ -29,6 +33,8 @@
             <input
               required
               type="text"
+              minlength="2"
+              maxlength="150"
               id="condition"
               name="condition"
               [(ngModel)]="bindingModel.condition"
@@ -40,6 +46,8 @@
             <input
               required
               type="text"
+              minlength="2"
+              maxlength="150"
               id="color"
               name="color"
               [(ngModel)]="bindingModel.color"
@@ -51,6 +59,8 @@
             <input
               required
               type="text"
+              minlength="2"
+              maxlength="150"
               id="transmission"
               name="transmission"
               [(ngModel)]="bindingModel.transmission"
@@ -61,7 +71,9 @@
             <label for="model">Year Of Production</label>
             <input
               required
-              type="text"
+              type="number"
+              [min]=1970
+              [max]=2020
               id="yearOfProduction"
               name="yearOfProduction"
               [(ngModel)]="bindingModel.yearOfProduction"
@@ -72,7 +84,9 @@
             <label for="model">Kilometers</label>
             <input
               required
-              type="text"
+              type="number"
+              [min]=0
+              [max]=10000000
               id="kilometers"
               name="kilometers"
               [(ngModel)]="bindingModel.kilometers"
@@ -83,7 +97,9 @@
             <label for="model">Price</label>
             <input
               required
-              type="text"
+              type="number"
+              [min]=0
+              [max]=10000000
               id="price"
               name="price"
               [(ngModel)]="bindingModel.price"
@@ -95,6 +111,8 @@
             <input
               required
               type="text"
+              minlength="2"
+              maxlength="1000"
               id="imageUrl"
               name="imageUrl"
               [(ngModel)]="bindingModel.imageUrl"

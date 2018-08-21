@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { CarsModule } from './cars/cars.module';
-import { PartsModule } from './parts/parts.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -31,9 +30,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     AppRoutingModule,
-    CarsModule,
-    PartsModule,
-    UsersModule
+    CarsModule
   ],
   providers: [
     {

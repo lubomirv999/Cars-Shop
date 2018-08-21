@@ -9,6 +9,8 @@
                 <input
                   required
                   type="text"
+                  minlength="2"
+                  maxlength="150"
                   id="maker"
                   name="maker"
                   [(ngModel)]="bindingModel.maker"
@@ -24,6 +26,8 @@
                 <input
                   required
                   type="text"
+                  minlength="2"
+                  maxlength="150"
                   id="model"
                   name="model"
                   [(ngModel)]="bindingModel.model"
@@ -39,6 +43,8 @@
                 <input
                   required
                   type="text"
+                  minlength="2"
+                  maxlength="150"
                   id="condition"
                   name="condition"
                   [(ngModel)]="bindingModel.condition"
@@ -53,7 +59,9 @@
                 <label for="model">Price</label>
                 <input
                   required
-                  type="text"
+                  type="number"
+                  [min]=0
+                  [max]=10000000
                   id="price"
                   name="price"
                   [(ngModel)]="bindingModel.price"
@@ -69,6 +77,8 @@
                 <input
                   required
                   type="text"
+                  minlength="2"
+                  maxlength="1000"
                   id="imageUrl"
                   name="imageUrl"
                   [(ngModel)]="bindingModel.imageUrl"

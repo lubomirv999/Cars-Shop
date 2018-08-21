@@ -19,7 +19,7 @@ export class CarsCreateComponent implements OnInit {
   constructor(private carsService: CarsService,
     private toastr: ToastrService,
     private router: Router) {
-    this.bindingModel = new CarCreate("", "", "", "", "", "", "", "", "", firebase.auth().currentUser.uid);
+    this.bindingModel = new CarCreate("", "", "", "", "", 0, 0, 0, "", firebase.auth().currentUser.uid);
   }
 
   ngOnInit() {

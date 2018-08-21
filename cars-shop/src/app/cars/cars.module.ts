@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CarsRoutingModule } from './cars-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomFormsModule } from 'ng2-validation'
 
 import { AuthService } from '../auth/auth.service';
 
@@ -24,13 +25,14 @@ import { MyCarsComponent } from './my-cars/my-cars.component';
     CarsBuyComponent,
     BuySuccessComponent,
     BuyFailedComponent,
-    MyCarsComponent
+    MyCarsComponent    
   ],
   imports: [
     CommonModule,
     FormsModule,
     HttpClientModule,
-    CarsRoutingModule
+    CarsRoutingModule,
+    CustomFormsModule
   ],
   providers:[
     AuthService

@@ -5,9 +5,9 @@ export class CarCreate {
         public condition: string,
         public color: string,
         public transmission: string,
-        public yearOfProduction: string,
-        public kilometers: string,
-        public price: string,
+        public yearOfProduction: number,
+        public kilometers: number,
+        public price: number,
         public imageUrl: string,
         public ownerId: string
     ) { }

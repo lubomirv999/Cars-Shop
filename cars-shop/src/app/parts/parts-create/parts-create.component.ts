@@ -17,7 +17,7 @@ export class PartsCreateComponent implements OnInit {
   constructor(private partsService: PartsService,
     private toastr: ToastrService,
     private router: Router) {
-    this.bindingModel = new PartCreate("", "", "", "", "", firebase.auth().currentUser.uid);
+    this.bindingModel = new PartCreate("", "", 0, "", "", firebase.auth().currentUser.uid);
   }
 
   ngOnInit() {
